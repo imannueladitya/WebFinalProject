@@ -7,13 +7,13 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link"style="color: rgb(255,230,167)" href="/">Home <span class="sr-only">(current)</span></a>
+        <a class="nav-link"style="color: rgb(255,230,167)" href="/HomePage">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" style="color: rgb(255,230,167)"href="/stocklist">Stock List</a>
       </li>
       <li class="nav_item">
-      <a class="nav-link"style="color: rgb(255,230,167);" href="/register">Register</a>
+      <a class="nav-link"style="color: rgb(255,230,167);" href="/">Logout</a>
       </li> 
     </ul>
   </div>

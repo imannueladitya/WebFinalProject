@@ -19,14 +19,12 @@
   <div class="container">
    <table class="table table-bordered" width="100%" cellspacing="0">
             <thead align="center">
-              <th>Kode Barang</th>
-              <th>Nama Barang</th>
-              <th>Harga</th>
-              <th>Stock</th>
+              <th>Product ID</th>
+              <th>Product Name</th>
+              <th>Price</th>
             </thead>
             <tbody>
                 <tr>
-                  <td align="center">test</td>
                   <td align="center">test</td>
                   <td align="center">test</td>
                   <td align="center">test</td>

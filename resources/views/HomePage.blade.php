@@ -12,7 +12,38 @@
     <title></title>
   </head>
   <body>
-  <img src="{{ asset('image/Logo HME.jpg')}}">
+  <!-- 
+  <div>
+    <label> For Graph
+    </label>
+  </div>
+  -->
+  <div class="container">
+   <table class="table table-bordered" width="100%" cellspacing="0">
+            <thead align="center">
+              <th>Transaction ID</th>
+              <th>User Name</th>
+              <th>Barang A</th>
+              <th>Barang B</th>
+              <th>Barang C</th>
+              <th>Total Price</th>
+              <th>Estimated Time</th>
+              <th>Notes for User</th>
+            </thead>
+            <tbody>
+                <tr>
+                  <td align="center">test</td>
+                  <td align="center">test</td>
+                  <td align="center">test</td>
+                  <td align="center">test</td>
+                  <td align="center">test</td>
+                  <td align="center">test</td>
+                  <td align="center">test</td>
+                  <td align="center">test</td>
+                </tr>
+            </tbody>
+          </table>
+    </div>
    
 
 
