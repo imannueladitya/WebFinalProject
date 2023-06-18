@@ -16,7 +16,7 @@ Route::get('/', function () {
     return view('auth.login');
 });
 
-Route::get('/HomePage', function () {
+Route::get('/home', function () {
     return view('HomePage');
 });
 
