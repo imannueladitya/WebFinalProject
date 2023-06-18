@@ -16,9 +16,9 @@ return new class extends Migration
         Schema::create('transaction', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id');
-            $table->foreign('user_id')->references('id')->on('users');
+                $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
             $table->unsignedBigInteger('product_id');
-            $table->foreign('product_id')->references('id')->on('product');
+                $table->foreign('product_id')->references('id')->on('product')->onUpdate('cascade')->onDelete('cascade');
             $table->integer('id_qty');
             $table->integer('id_total');
             $table->integer('transaction_totalprice');

@@ -13,18 +13,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', function () {
-    return view('Login');
-});
-Route::get('/login', function () {
-    return view('Login');
+    return view('auth.login');
 });
 
 Route::get('/HomePage', function () {
     return view('HomePage');
 });
+
 Route::get('/stocklist', function () {
     return view('StockList');
 });
+
+/*
+Route::get('/login', function () {
+    return view('Login');
+}); */
+
+/*
 Route::get('/register', function () {
     return view('Register');
-});
+}); */
+
+//Route::post('/register', 'FormController@submit' );
+
+
+Auth::routes();
+
+//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
