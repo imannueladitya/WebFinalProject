@@ -1,6 +1,5 @@
 @include('layouts.app')
-<!doctype html>
-<html lang="en">
+<html>
   <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -10,31 +9,23 @@
    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="{{ asset('/css/HomePage.css') }}" rel="stylesheet">
-    <title></title>
+    <title> Add Product Page</title>
   </head>
   <body>
       <br>
-      <h1 style="font-size:150%;text-align: center;">Stock List</h1>
+      <h1 style="font-size:150%;text-align: center;">Add Your Product Here!</h1>
       <br>
-  <div class="container">
-   <table class="table table-bordered" width="100%" cellspacing="0">
-            <thead align="center">
-              <th>No</th>
-              <th>Product Name</th>
-              <th>Price</th>
-              <?php $no = 1 ?>
-            </thead>
-            <tbody>
-              @foreach ($products as $product)
-                <tr>
-                  <td align="center">{{$no++}}</td>
-                  <td align="center">{{$product->product_name}}</td>
-                  <td align="center">{{$product->product_price}}</td>
-                </tr>
-                @endforeach
-            </tbody>
-          </table>
-    </div>
+      <div class="container-fluid p-3 my-3 border bg-dark text-white text-center">
+        <form method="POST" action="{{route('addproduct')}}">
+              @csrf <!-- Add this CSRF token field for security -->
+              <label for="name">Name:</label>
+              <input type="text" id="name" name="name">
+              <label for="price">Price:</label>
+              <input type="text" id="price" name="price">
+              <br>
+              <input type="submit" value="Submit"> Cek Kembali Data Barang </input>
+        </form>
+      </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -42,4 +33,4 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
   </body>
-</html>
+  </html>

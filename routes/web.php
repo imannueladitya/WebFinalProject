@@ -24,19 +24,20 @@ Route::get('/stocklist', function () {
     return view('StockList');
 });
 
-/*
-Route::get('/login', function () {
-    return view('Login');
-}); */
+Route::get('/addproduct', function () {
+    return view('AddProductForm');
+});
 
-/*
-Route::get('/register', function () {
-    return view('Register');
-}); */
+Route::get('/stocklist',[App\Http\Controllers\ProductController::class, 'product'])->name('stocklist');
 
-//Route::post('/register', 'FormController@submit' );
+Route::get('/api/login',[App\Http\Controllers\APIController::class, 'login'])->name('login');
+Route::post('/api/login',[App\Http\Controllers\APIController::class, 'login'])->name('loginpost');
 
+Route::post('/api/register',[App\Http\Controllers\APIController::class, 'registerMobile'])->name('registermobile');
+
+Route::get('/productform',[App\Http\Controllers\ProductController::class, 'form'])->name('productform');
+Route::post('/productform',[App\Http\Controllers\ProductController::class, 'addProduct'])->name('addproduct');
 
 Auth::routes();
 
-//Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
