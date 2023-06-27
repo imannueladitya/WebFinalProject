@@ -5,14 +5,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Transaction extends Model
+class Details extends Model
 {
-    public $table = "transaction";
+    public $table = "details";
     protected $fillable = [
-        'user_id',
+        'transaction_id',
         'product_id',
-       // 'details_id',
-        'transaction_totalprice',
+        'qty',
+        'total',
         'created_at',
         'updated_at',
     ];

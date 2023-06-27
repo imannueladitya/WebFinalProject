@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Transaction;
 
 class HomeController extends Controller
 {
@@ -23,6 +24,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('HomePage');
+        $transactions = Transaction::join('details', 'transaction.id', '=', 'details.transaction_id')->
+        select('*')->groupBy('transaction.id')->get();
+        return view('HomePage', compact("transactions"));
     }
 }

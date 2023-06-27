@@ -28,6 +28,10 @@ Route::get('/addproduct', function () {
     return view('AddProductForm');
 });
 
+Route::get('/api/gethargaproduk',[App\Http\Controllers\APIController::class, 'gethargaproduk'])->name('gethargaproduk');
+
+Route::post('/api/orderproduk',[App\Http\Controllers\APIController::class, 'orderproduk'])->name('orderproduk');
+
 Route::get('/stocklist',[App\Http\Controllers\ProductController::class, 'product'])->name('stocklist');
 
 Route::get('/api/login',[App\Http\Controllers\APIController::class, 'login'])->name('login');

@@ -27,20 +27,18 @@
               <th>Barang B</th>
               <th>Barang C</th>
               <th>Total Price</th>
-              <th>Estimated Time</th>
-              <th>Notes for User</th>
             </thead>
             <tbody>
+            @foreach ($transactions as $transaction)
                 <tr>
+                  <td align="center">{{$transaction->transaction_id}}</td>
+                  <td align="center">{{$transaction->user_id}}</td>
                   <td align="center">test</td>
                   <td align="center">test</td>
                   <td align="center">test</td>
-                  <td align="center">test</td>
-                  <td align="center">test</td>
-                  <td align="center">test</td>
-                  <td align="center">test</td>
-                  <td align="center">test</td>
+                  <td align="center">Rp {{$transaction->transaction_totalprice}}</td>
                 </tr>
+            @endforeach
             </tbody>
           </table>
     </div>
