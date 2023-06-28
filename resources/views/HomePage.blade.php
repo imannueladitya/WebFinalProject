@@ -12,35 +12,29 @@
     <title></title>
   </head>
   <body>
-  <!-- 
-  <div>
-    <label> For Graph
-    </label>
-  </div>
-  -->
   <div class="container">
    <table class="table table-bordered" width="100%" cellspacing="0">
-            <thead align="center">
-              <th>Transaction ID</th>
-              <th>User Name</th>
-              <th>Barang A</th>
-              <th>Barang B</th>
-              <th>Barang C</th>
-              <th>Total Price</th>
-            </thead>
-            <tbody>
-            @foreach ($transactions as $transaction)
-                <tr>
-                  <td align="center">{{$transaction->transaction_id}}</td>
-                  <td align="center">{{$transaction->user_id}}</td>
-                  <td align="center">test</td>
-                  <td align="center">test</td>
-                  <td align="center">test</td>
-                  <td align="center">Rp {{$transaction->transaction_totalprice}}</td>
-                </tr>
-            @endforeach
-            </tbody>
-          </table>
+   <thead>
+    <tr>
+      <th>Transaction ID</th>
+      <th>User Name</th>
+      <th>Transaction Total Price</th>
+      <th>Product Name</th>
+      <th>Quantity</th>
+    </tr>
+  </thead>
+  <tbody>
+    @foreach($transactions as $transaction)
+      <tr>
+        <td>{{ $transaction->id }}</td>
+        <td>{{ $transaction->name }}</td>
+        <td>{{ $transaction->transaction_totalprice }}</td>
+        <td>{{ $transaction->product_name }}</td>
+        <td>{{ $transaction->qty }}</td>
+        
+      </tr>
+    @endforeach
+  </tbody>
     </div>
    
 

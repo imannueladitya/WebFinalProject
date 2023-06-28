@@ -14,11 +14,6 @@ class APIController extends Controller
     public function login (){
         $email = \request('email');
         $password = \request('password');
-        // $email = "kevin@gmail.com";
-        // $password = "1239423094230";
-
-        // $user = new User();
-        // echo "Ini di API Controller";
 
         $user = User::where('email', '=', $email)->first();
         if (!$user) {
@@ -35,14 +30,14 @@ class APIController extends Controller
 
         $user->name = \request('name');
         $user->email = \request('email');
-        $user->password = Hash::make(\request('password'));
+        $user->password = Hash::make(\request('password')); //password butuh dihash (enkripsi) agar bisa login diweb
 
         $user->save();
         return response()->json(['success'=>true,'message'=>'success', 'data' => $user]);
     }
 
     public function gethargaproduk (){
-        $product = Product::limit(3)->get();
+        $product = Product::limit(3)->get(); //hanya menampilkan top3 list
         
         return response()->json(['data' => $product]);
     }

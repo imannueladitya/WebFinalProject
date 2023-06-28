@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Transaction;
+use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
 {
@@ -24,8 +25,14 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $transactions = Transaction::join('details', 'transaction.id', '=', 'details.transaction_id')->
-        select('*')->groupBy('transaction.id')->get();
+        //Query untuk menampilkan semua pesanan di dalam web
+        $transactions = DB::table('transaction')
+    ->join('details', 'transaction.id', '=', 'details.transaction_id')
+    ->join('product', 'details.product_id', '=', 'product.id')
+    ->join('users', 'transaction.user_id', '=', 'users.id')
+    ->select('transaction.id', 'users.name', 'transaction.transaction_totalprice', 'product.product_name', 'details.qty')
+    ->get();
+
         return view('HomePage', compact("transactions"));
     }
 }

@@ -61,6 +61,8 @@ return [
             'options' => extension_loaded('pdo_mysql') ? array_filter([
                 PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA'),
             ]) : [],
+
+            //tamabahan untuk query semua transaksi ke web
             'modes' => [
                 'STRICT_TRANS_TABLES',
                 'NO_ZERO_IN_DATE',

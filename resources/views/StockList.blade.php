@@ -21,13 +21,13 @@
             <thead align="center">
               <th>No</th>
               <th>Product Name</th>
-              <th>Price</th>
-              <?php $no = 1 ?>
+              <th>Price</th> 
+              <?php $no = 1 ?>  <!-- Set agar mulai dari angka 1 -->
             </thead>
             <tbody>
               @foreach ($products as $product)
                 <tr>
-                  <td align="center">{{$no++}}</td>
+                  <td align="center">{{$no++}}</td> <!--no angka ditambah 1 setiap penambahan barang -->
                   <td align="center">{{$product->product_name}}</td>
                   <td align="center">{{$product->product_price}}</td>
                 </tr>

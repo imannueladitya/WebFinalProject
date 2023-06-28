@@ -13,7 +13,7 @@ class ProductController extends Controller
     }
 
     public function product (){
-        $products =  Product::all(); // select* form product
+        $products =  Product::all(); // select* from product
         return view('stocklist',compact ('products'));
     }    
     public function addProduct (){

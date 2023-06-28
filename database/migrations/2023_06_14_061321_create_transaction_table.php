@@ -17,9 +17,6 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('user_id');
                 $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
-          //  $table->unsignedBigInteger('details_id');
-            //    $table->foreign('details_id')->references('id')->on('details')->onUpdate('cascade')->onDelete('cascade');
-            
             $table->integer('transaction_totalprice');
             //$table->string('transaction_notification');
             //$table->time('transaction_time');
