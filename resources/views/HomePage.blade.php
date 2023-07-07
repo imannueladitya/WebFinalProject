@@ -17,21 +17,26 @@
    <thead>
     <tr>
       <th>Transaction ID</th>
-      <th>User Name</th>
-      <th>Transaction Total Price</th>
-      <th>Product Name</th>
+      <th>User Name</th>      
+      <th>Produk A</th>
       <th>Quantity</th>
+      <th>Produk B</th>
+      <th>Quantity</th>
+      <th>Produk C</th>
+      <th>Quantity</th>
+      <th>Transaction Total Price</th>
     </tr>
   </thead>
   <tbody>
-    @foreach($transactions as $transaction)
+    @foreach($cards as $card)
       <tr>
-        <td>{{ $transaction->id }}</td>
-        <td>{{ $transaction->name }}</td>
-        <td>{{ $transaction->transaction_totalprice }}</td>
-        <td>{{ $transaction->product_name }}</td>
-        <td>{{ $transaction->qty }}</td>
-        
+        <td>{{ $card->transactionId }}</td>
+        <td>{{ $card->username }}</td>
+        @foreach($card->products as $key => $value)
+          <td>{{ $key }}</td>
+          <td>{{ $value }}</td>
+        @endforeach
+        <td>{{ $card->totalPrice }}</td>
       </tr>
     @endforeach
   </tbody>

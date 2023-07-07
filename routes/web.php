@@ -55,3 +55,5 @@ Route::post('/productform',[App\Http\Controllers\ProductController::class, 'addP
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+
