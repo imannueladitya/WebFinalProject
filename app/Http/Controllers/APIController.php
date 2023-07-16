@@ -116,7 +116,7 @@ class APIController extends Controller
         $detailC ->product_id = \request('product_idC');
         $detailC ->transaction_id= $transcation->id;
         $detailC ->qty = \request('id_qtyC');
-        $detailC ->total = \request('id_totalB');
+        $detailC ->total = \request('id_totalC');
         $detailC->save();
 
         return response()->json(['success'=>true,'message'=>'success', 'transaction_id'=>$transcation->id]);

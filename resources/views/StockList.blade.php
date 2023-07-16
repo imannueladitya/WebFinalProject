@@ -33,7 +33,7 @@
                   <td align="center">{{$product->product_price}}</td>
                   <td align="center">{{$product->total_pesanan}}</td>
                 </tr>
-                @endforeach
+              @endforeach
             </tbody>
           </table>
     </div>
